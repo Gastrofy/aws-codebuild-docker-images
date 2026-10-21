@@ -10,6 +10,41 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from urllib.parse import parse_qsl, urlsplit
+
+
+PACKAGE_CONFIG_NAMES = {'.npmrc', '.yarnrc', '.yarnrc.yml', '.yarnrc.yaml'}
+CREDENTIAL_KEY = r'(?:_authToken|_auth|_password|password|username|npmAuthToken|npmAuthIdent|keyfile|certfile|httpsKeyFilePath|httpsCertFilePath)'
+CREDENTIAL_CONFIG = re.compile(
+    r'(?:^|[,{#;\s])[\"\']?(?://[^\s\"\'=]*:)?' + CREDENTIAL_KEY + r'[\"\']?\s*(?:[:=]|\s)',
+    re.IGNORECASE,
+)
+
+
+def check_package_config(path):
+    if path.name not in PACKAGE_CONFIG_NAMES or not path.is_file():
+        return
+    text = path.read_text(errors='replace')
+    credential_url = False
+    try:
+        for url in re.findall(r'https?://[^\s\"\'<>]+', text):
+            parsed = urlsplit(url)
+            if parsed.username is not None or any(key.lower() in {'token', 'access_token', 'auth', 'api_key', 'password', 'signature'}
+                                                  for key, _ in parse_qsl(parsed.query, keep_blank_values=True)):
+                credential_url = True
+    except ValueError:
+        raise ValueError('Invalid package manager registry URL') from None
+    if CREDENTIAL_CONFIG.search(text) or credential_url:
+        # Do not include a config value or its source line in an exception.
+        raise ValueError('Credential-bearing package manager configuration is not allowed')
+
+
+def redact_output(text, values):
+    for value in sorted(values, key=len, reverse=True):
+        text = text.replace(value, '[REDACTED]')
+    text = re.sub(r'(' + CREDENTIAL_KEY + r'[\"\']?\s*[:=]\s*)(?:\"[^\"\n]*\"|\'[^\'\n]*\'|[^\s,;]+)',
+                  r'\1[REDACTED]', text, flags=re.IGNORECASE)
+    return re.sub(r'https?://[^\s\"\'<>]+', '[URL_REDACTED]', text)
 
 
 def source_tree(root):
@@ -39,6 +74,7 @@ def prepare_workspace(source, target):
             if path.is_file():
                 excluded.append(relative.as_posix())
             continue
+        check_package_config(path)
         destination = target / relative
         if path.is_symlink():
             assert path.resolve().is_relative_to(source.resolve())
@@ -118,10 +154,7 @@ def run(contract):
             if result.returncode == 0 and command[0] in ['npm', 'yarn', 'pnpm'] and any(arg in ['install', 'ci'] for arg in command[1:]) and not '-g' in command:
                 print('NODE_DEPENDENCY_HOOKS=' + json.dumps({'commandIndex': index, 'packages': dependency_hooks(work)}), flush=True)
             if result.returncode:
-                text = result.stdout.decode(errors='replace')
-                for value in sorted(redactions, key=len, reverse=True):
-                    text = text.replace(value, '[REDACTED]')
-                text = re.sub(r'https?://[^\s\"\'<>]+', '[URL_REDACTED]', text)
+                text = redact_output(result.stdout.decode(errors='replace'), redactions)
                 print('NODE_SOURCE_FAILURE=' + json.dumps({'commandIndex': index, 'tail': text.splitlines()[-35:]}), flush=True)
                 raise RuntimeError('The reviewed source command failed')
         for required in contract['expectedOutputs']:

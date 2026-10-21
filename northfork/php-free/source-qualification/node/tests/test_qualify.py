@@ -39,6 +39,46 @@ class SourceContractTest(unittest.TestCase):
             self.assertNotIn('DATABASE_PASSWORD', clean)
             self.assertEqual(clean['AWS_SECRET_ACCESS_KEY'], 'qualification-only')
 
+    def test_workspace_rejects_package_credentials_without_exposing_values(self):
+        configs = [('.npmrc', '//registry.example.invalid/:_authToken=synthetic-secret'),
+                   ('.yarnrc', '"_auth" "synthetic-secret"'),
+                   ('.yarnrc.yml', 'npmScopes:\n  example:\n    npmAuthToken: synthetic-secret'),
+                   ('.yarnrc.yaml', '{npmAuthIdent: "synthetic-secret"}'),
+                   ('.npmrc', 'registry=https://user:synthetic-secret@example.invalid/'),
+                   ('.npmrc', '#_authToken=synthetic-secret')]
+        configs += [('.npmrc', 'registry=https://registry.example.invalid/?' + key + '=synthetic-secret')
+                    for key in ['token', 'access_token', 'auth', 'api_key', 'password', 'signature']]
+        for name, text in configs:
+            with self.subTest(name=name, style=configs.index((name, text))):
+                with tempfile.TemporaryDirectory() as folder:
+                    source, target = Path(folder) / 'source', Path(folder) / 'target'
+                    source.mkdir(); target.mkdir()
+                    (source / name).write_text(text)
+                    with self.assertRaises(ValueError) as error:
+                        module.prepare_workspace(source, target)
+                    self.assertNotIn('synthetic-secret', str(error.exception))
+                    self.assertFalse((target / name).exists())
+
+    def test_workspace_preserves_nonsecret_package_registry_configuration(self):
+        with tempfile.TemporaryDirectory() as folder:
+            source, target = Path(folder) / 'source', Path(folder) / 'target'
+            source.mkdir(); target.mkdir()
+            configs = {'.npmrc': 'registry=https://registry.example.invalid/?mirror=public\nalways-auth=true\n',
+                       '.yarnrc.yml': 'npmRegistryServer: https://registry.example.invalid/\nnodeLinker: node-modules\n'}
+            for name, text in configs.items():
+                (source / name).write_text(text)
+            module.prepare_workspace(source, target)
+            for name, text in configs.items():
+                self.assertEqual((target / name).read_text(), text)
+
+    def test_failure_output_redacts_package_credentials(self):
+        text = '_authToken=synthetic-token npmAuthIdent: "synthetic-ident" https://user:synthetic-password@example.invalid/ inherited-secret'
+        safe = module.redact_output(text, {'inherited-secret'})
+        for value in ['synthetic-token', 'synthetic-ident', 'synthetic-password', 'inherited-secret']:
+            self.assertNotIn(value, safe)
+        self.assertIn('[REDACTED]', safe)
+        self.assertIn('[URL_REDACTED]', safe)
+
     def test_dependency_hooks_are_recorded_without_execution(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
