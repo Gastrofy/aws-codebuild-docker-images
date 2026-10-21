@@ -1,0 +1,129 @@
+{
+  "profiles": {
+    "node-12.22.12-amd64": {
+      "language": "node",
+      "version": "12.22.12",
+      "architecture": "amd64",
+      "projects": [
+        "gastrofy-api-codedeploy",
+        "gastrofy-api-test-codebuild",
+        "nf-content-cart-shop-landing-page"
+      ],
+      "package_tools": [],
+      "native_qualification": "required_before_project_update",
+      "archive_sha256": "e6d052364bfa2c17da92cf31794100cfd709ba147415ddaeed2222eec9ca1469",
+      "checksum_source": "https://nodejs.org/dist/v12.22.12/SHASUMS256.txt"
+    },
+    "node-18.20.8-amd64": {
+      "language": "node",
+      "version": "18.20.8",
+      "architecture": "amd64",
+      "projects": [
+        "content-cart-code-deploy-build",
+        "page-editor-deploy-build"
+      ],
+      "package_tools": [
+        "yarn"
+      ],
+      "native_qualification": "required_before_project_update"
+    },
+    "node-20.20.2-amd64": {
+      "language": "node",
+      "version": "20.20.2",
+      "architecture": "amd64",
+      "projects": [
+        "open-ai-service-builder"
+      ],
+      "package_tools": [],
+      "native_qualification": "required_before_project_update"
+    },
+    "node-22.23.3-amd64": {
+      "language": "node",
+      "version": "22.23.3",
+      "architecture": "amd64",
+      "projects": [
+        "automatching-tool",
+        "nf-lean-widget"
+      ],
+      "package_tools": [
+        "yarn"
+      ],
+      "native_qualification": "required_before_project_update"
+    },
+    "node-24.19.0-amd64": {
+      "language": "node",
+      "version": "24.19.0",
+      "architecture": "amd64",
+      "projects": [
+        "nf-product-locator-widget-prod",
+        "nf-product-locator-widget-test"
+      ],
+      "package_tools": [
+        "corepack"
+      ],
+      "native_qualification": "required_before_project_update",
+      "archive_sha256": "14b342e71204f811bde6153be8e04b62aef63c236fef92b55f9c83154b409647",
+      "checksum_source": "https://nodejs.org/dist/v24.19.0/SHASUMS256.txt"
+    },
+    "node-20.20.2-arm64": {
+      "language": "node",
+      "version": "20.20.2",
+      "architecture": "arm64",
+      "projects": [
+        "ChatDeploy",
+        "LandingDeploy"
+      ],
+      "package_tools": [],
+      "native_qualification": "required_before_project_update"
+    }
+  },
+  "package_tools": {
+    "yarn": {
+      "version": "1.22.22",
+      "url": "https://registry.npmjs.org/yarn/-/yarn-1.22.22.tgz",
+      "integrity": "sha512-prL3kGtyG7o9Z9Sv8IPfBNrWTDmXB4Qbes8A9rEzt6wkJV8mUvoirjU0Mp3GGAU06Y0XQyA3/2/RQFVuK7MTfg==",
+      "bin": {
+        "yarn": "bin/yarn.js",
+        "yarnpkg": "bin/yarn.js"
+      },
+      "metadata_source": "https://registry.npmjs.org/yarn/1.22.22"
+    },
+    "corepack": {
+      "version": "0.36.0",
+      "url": "https://registry.npmjs.org/corepack/-/corepack-0.36.0.tgz",
+      "integrity": "sha512-SiiJsBhZqdBiPHTEl6OT3sASrRrKIcYTQMsVGXx6EE/gM8WFMwYjeIX8Tt8RiU4Iv2J6LbT8KpGfCOsBpRWB/w==",
+      "bin": {
+        "pnpm": "./dist/pnpm.js",
+        "pnpx": "./dist/pnpx.js",
+        "yarn": "./dist/yarn.js",
+        "yarnpkg": "./dist/yarnpkg.js",
+        "corepack": "./dist/corepack.js"
+      },
+      "metadata_source": "https://registry.npmjs.org/corepack/0.36.0"
+    },
+    "pnpm": {
+      "version": "11.27.1",
+      "url": "https://registry.npmjs.org/pnpm/-/pnpm-11.27.1.tgz",
+      "integrity": "sha512-qB1MIbmwmksK6/kO9eUn1CYr3aMi0mCCl4y1SQI6xtnK/Jixn/+qXHHbQ4pl9wIk7beNcxEYeGH/lkgNHNyiPA==",
+      "bin": {
+        "pn": "bin/pnpm.mjs",
+        "pnx": "bin/pnpx.mjs",
+        "pnpm": "bin/pnpm.mjs",
+        "pnpx": "bin/pnpx.mjs"
+      },
+      "metadata_source": "https://registry.npmjs.org/pnpm/11.27.1"
+    }
+  },
+  "excluded_projects": {
+    "docker_selector_retirement_candidates": [
+      "order-service",
+      "recipe-recommender-service",
+      "test",
+      "testy-service"
+    ],
+    "java_retirement_candidate": [
+      "resolver-java"
+    ]
+  },
+  "base_policy": "Each profile requires an approved immutable native PHP-free base; do not render with a managed or mutable image reference."
+}

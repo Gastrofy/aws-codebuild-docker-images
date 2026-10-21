@@ -1,0 +1,934 @@
+{
+  "projects": [
+    {
+      "project": "ChatDeploy",
+      "architecture": "arm64",
+      "profile": "node-20.20.2-arm64",
+      "bindings": [
+        {
+          "repository": "Gastrofy/northfork-chat",
+          "ref": "main",
+          "pipeline": "NorthforkChatProd",
+          "sourceSha": "9b41b3cfed50b795a04a0e60d6ca1d4f927ad2d9",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "a26f8c10f72cdc14d31638f791911be62c573b49",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "5bb1e7b450f19581db59afd6c2c461762c611e02",
+            "sha256": "454782982561866981a629ae555cf2c165249b427e40432f7de2dcbc0a54c025"
+          },
+          "engines": {
+            "node": ">=20.0.0"
+          },
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "package-lock.json",
+              "gitBlob": "7f866a9f751f2600e44afba489996709ff7652da"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "npm",
+            "ci",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "build",
+              "command": "next build"
+            }
+          ],
+          "requiredReviewGates": [
+            "Review Next configuration, static-generation network calls, and dependency lifecycle scripts. Use synthetic local configuration."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        },
+        {
+          "repository": "Gastrofy/northfork-chat",
+          "ref": "develop",
+          "pipeline": "NorthforkChatTest",
+          "sourceSha": "5811415408048dc10e95e117fa31c95ad1e620f9",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "a26f8c10f72cdc14d31638f791911be62c573b49",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "5bb1e7b450f19581db59afd6c2c461762c611e02",
+            "sha256": "454782982561866981a629ae555cf2c165249b427e40432f7de2dcbc0a54c025"
+          },
+          "engines": {
+            "node": ">=20.0.0"
+          },
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "package-lock.json",
+              "gitBlob": "7f866a9f751f2600e44afba489996709ff7652da"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "npm",
+            "ci",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "build",
+              "command": "next build"
+            }
+          ],
+          "requiredReviewGates": [
+            "Review Next configuration, static-generation network calls, and dependency lifecycle scripts. Use synthetic local configuration."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        },
+        {
+          "repository": "Gastrofy/northfork-chat",
+          "ref": "main",
+          "pipeline": null,
+          "sourceSha": "9b41b3cfed50b795a04a0e60d6ca1d4f927ad2d9",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "a26f8c10f72cdc14d31638f791911be62c573b49",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "5bb1e7b450f19581db59afd6c2c461762c611e02",
+            "sha256": "454782982561866981a629ae555cf2c165249b427e40432f7de2dcbc0a54c025"
+          },
+          "engines": {
+            "node": ">=20.0.0"
+          },
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "package-lock.json",
+              "gitBlob": "7f866a9f751f2600e44afba489996709ff7652da"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "npm",
+            "ci",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "build",
+              "command": "next build"
+            }
+          ],
+          "requiredReviewGates": [
+            "Review Next configuration, static-generation network calls, and dependency lifecycle scripts. Use synthetic local configuration."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    },
+    {
+      "project": "LandingDeploy",
+      "architecture": "arm64",
+      "profile": "node-20.20.2-arm64",
+      "bindings": [
+        {
+          "repository": "Gastrofy/northfork-landing-pages",
+          "ref": "develop",
+          "pipeline": "nf-landing-dev",
+          "sourceSha": "5d51479d5d454fb2f2850c864ee218d552a9cd40",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "ab7b5d1cf168f2fca9249a8af2852a4933215598",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "b3f61b205c7b65a88cc71553cb0737b40cdb7e03",
+            "sha256": "6816273df83504b078cb999e085b492e5df0cdd89f1ca2184e60dc7ef57f88ff"
+          },
+          "engines": {
+            "node": ">=20.11.0"
+          },
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "package-lock.json",
+              "gitBlob": "f96b5611c23049598283331e2c8997cd65eac0bb"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "npm",
+            "ci",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "typecheck",
+              "command": "tsc --noEmit"
+            },
+            {
+              "name": "test:unit",
+              "command": "vitest run"
+            },
+            {
+              "name": "build",
+              "command": "next build"
+            }
+          ],
+          "requiredReviewGates": [
+            "Review Next/static-generation network calls and tests. Disable telemetry; use synthetic fixture URLs and credentials."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        },
+        {
+          "repository": "Gastrofy/northfork-landing-pages",
+          "ref": "main",
+          "pipeline": null,
+          "sourceSha": "3993ecdc9d2b0298b31149c3aadd57e1eed5ede7",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "ab7b5d1cf168f2fca9249a8af2852a4933215598",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "68479557241b47862c7854743e62298e3827971d",
+            "sha256": "50d957a218f0e51164b6e9a9cf52bc067bfa14a12bedea2b06a25d59cfc15714"
+          },
+          "engines": {
+            "node": ">=20.11.0"
+          },
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "package-lock.json",
+              "gitBlob": "6425099dd518ed50b42aed8fb48a7e42f8eac863"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "npm",
+            "ci",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "typecheck",
+              "command": "tsc --noEmit"
+            },
+            {
+              "name": "test:unit",
+              "command": "vitest run"
+            },
+            {
+              "name": "build",
+              "command": "next build"
+            }
+          ],
+          "requiredReviewGates": [
+            "Review Next/static-generation network calls and tests. Disable telemetry; use synthetic fixture URLs and credentials."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    },
+    {
+      "project": "automatching-tool",
+      "architecture": "amd64",
+      "profile": "node-22.23.3-amd64",
+      "bindings": [
+        {
+          "repository": "Gastrofy/ai-monitoring-studio",
+          "ref": "main",
+          "pipeline": "automatching-tool-prod",
+          "sourceSha": "d8bd2a5b893f858b78ba4140e2f30c9353b6ac9a",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "ac1356e8ff37f986f8a46a932fce3c6916e67db2",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "eee539a7c38361de41cf4ff04dc4a6e9aadfde00",
+            "sha256": "394a5ba389eecb6bece46b644645f2a8c58afe89a22e814ef6541f9cfbffdc5b"
+          },
+          "engines": null,
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "yarn.lock",
+              "gitBlob": "c875b72bc8a27e043e154502b43cbcf889f31b40"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "yarn",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts",
+            "--non-interactive"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "build",
+              "command": "next build"
+            }
+          ],
+          "requiredReviewGates": [
+            "Review Next configuration, static-generation network calls, and dependency lifecycle scripts. Use synthetic local configuration."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        },
+        {
+          "repository": "Gastrofy/ai-monitoring-studio",
+          "ref": "develop",
+          "pipeline": null,
+          "sourceSha": "5975e8a175c9bcf2e1ef8fef4883696474b61aee",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "ac1356e8ff37f986f8a46a932fce3c6916e67db2",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "eee539a7c38361de41cf4ff04dc4a6e9aadfde00",
+            "sha256": "394a5ba389eecb6bece46b644645f2a8c58afe89a22e814ef6541f9cfbffdc5b"
+          },
+          "engines": null,
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "yarn.lock",
+              "gitBlob": "c875b72bc8a27e043e154502b43cbcf889f31b40"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "yarn",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts",
+            "--non-interactive"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "build",
+              "command": "next build"
+            }
+          ],
+          "requiredReviewGates": [
+            "Review Next configuration, static-generation network calls, and dependency lifecycle scripts. Use synthetic local configuration."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    },
+    {
+      "project": "content-cart-code-deploy-build",
+      "architecture": "amd64",
+      "profile": "node-18.20.8-amd64",
+      "bindings": [
+        {
+          "repository": "Gastrofy/content-cart-api",
+          "ref": "master",
+          "pipeline": "content-cart-api-prod",
+          "sourceSha": "5c12d610d7e98854c3ed4936513daa366008a125",
+          "buildspec": "aws-deploy.yml",
+          "buildspecBlob": "cd45caca3ef2e32393b5b6ea4367ccafb36ec575",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "98c77d498944340a09cca193a87ab9a30f9e1d73",
+            "sha256": "e498e027fe7369ea910d6925a287bada296768d32487db000fe705cd7287cae6"
+          },
+          "engines": null,
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "yarn.lock",
+              "gitBlob": "9ee5a36f22aac33a2a6ca20af5afb14e0d326226"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "yarn",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts",
+            "--non-interactive"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "test",
+              "command": "vitest run"
+            }
+          ],
+          "requiredReviewGates": [
+            "SST build can resolve AWS infrastructure, credentials, and plugins. Review SST configuration and tests before selecting source commands. Do not execute SST build or deployment in generic qualification."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        },
+        {
+          "repository": "Gastrofy/content-cart-api",
+          "ref": "codex/NOF-9590-database-credentials",
+          "pipeline": "content-cart-api-test",
+          "sourceSha": "41f4f62e79b8d98ceb011f0b304486b4e65f3b7f",
+          "buildspec": "aws-deploy.yml",
+          "buildspecBlob": "cd45caca3ef2e32393b5b6ea4367ccafb36ec575",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "98c77d498944340a09cca193a87ab9a30f9e1d73",
+            "sha256": "e498e027fe7369ea910d6925a287bada296768d32487db000fe705cd7287cae6"
+          },
+          "engines": null,
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "yarn.lock",
+              "gitBlob": "9ee5a36f22aac33a2a6ca20af5afb14e0d326226"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "yarn",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts",
+            "--non-interactive"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "test",
+              "command": "vitest run"
+            }
+          ],
+          "requiredReviewGates": [
+            "SST build can resolve AWS infrastructure, credentials, and plugins. Review SST configuration and tests before selecting source commands. Do not execute SST build or deployment in generic qualification."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    },
+    {
+      "project": "gastrofy-api-codedeploy",
+      "architecture": "amd64",
+      "profile": "node-12.22.12-amd64",
+      "bindings": [
+        {
+          "status": "inline_source_not_bound",
+          "selector": {
+            "nodejs": "12.x"
+          },
+          "blocker": "Resolve the actual source artifact or caller before source qualification. Do not infer a source repository."
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    },
+    {
+      "project": "gastrofy-api-test-codebuild",
+      "architecture": "amd64",
+      "profile": "node-12.22.12-amd64",
+      "bindings": [
+        {
+          "repository": "Gastrofy/gastrofy_api",
+          "ref": "release-test",
+          "pipeline": "gastrofy-api-test",
+          "sourceSha": "1b34a930c2c7a109cae516fd06d4927d21f60a01",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "5d0afe7d2e09931a29b2d100fc19c786b38b5399",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "ff6e5cb6a999064ee4e7f30b24d19d245f9eae54",
+            "sha256": "3418d7642bd5a4c84f051b4be99a5bd6cb5d911cd286e18d7ea930f0375c72dd"
+          },
+          "engines": null,
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "package-lock.json",
+              "gitBlob": "29ba1c71408e185eeed306b25ff4d8f5fb832c17"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "npm",
+            "ci",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "candidateSourceScriptsAfterReview": [],
+          "requiredReviewGates": [
+            "The test script is serverless-bundle test. Review plugin configuration and tests before execution. No generic build script is declared."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    },
+    {
+      "project": "nf-content-cart-shop-landing-page",
+      "architecture": "amd64",
+      "profile": "node-12.22.12-amd64",
+      "bindings": [
+        {
+          "repository": "Gastrofy/landing-page",
+          "ref": "master",
+          "pipeline": "nf-content-cart-shop-landing-page",
+          "sourceSha": "6da7532369033bdfdf4a8603789582721e0ab78f",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "3a1afb01a28631b2ef6518f1e8253ac5e2b16352",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "b3810120ce3614584ca695391ad9c9ca1a9b459d",
+            "sha256": "4620641fc86ef38ccf7f83a76f21456441b9c7195c4755dd96c356641c016db7"
+          },
+          "engines": null,
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "package-lock.json",
+              "gitBlob": "8231a943b3d7b2402db38d84901545d12698c709"
+            },
+            {
+              "path": "yarn.lock",
+              "gitBlob": "d5bbbdcff477ddde5263d88e293fdad1d1b7beba"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "npm",
+            "ci",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "build",
+              "command": "webpack --mode=production --node-env=production"
+            }
+          ],
+          "requiredReviewGates": [
+            "The declared test is an intentional failure placeholder. Do not report it as a passing test. Review webpack environment and lifecycle scripts."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    },
+    {
+      "project": "nf-lean-widget",
+      "architecture": "amd64",
+      "profile": "node-22.23.3-amd64",
+      "bindings": [
+        {
+          "repository": "Gastrofy/ingredient-resolver-widget",
+          "ref": "main",
+          "pipeline": "nf-lean-widget-prod",
+          "sourceSha": "84bf120a631d6fbd94f9f191c115aef2da0bbc8c",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "457143ceac027a9f63ee5f357254800ea5fe4968",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "1d14f99ffd44f56545330e40e687ce905970cb1b",
+            "sha256": "f563659d8832c9d85224147ea6a36d03c563e5ee0b0eed1368a7d42118fb99fb"
+          },
+          "engines": {
+            "node": ">=22"
+          },
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "yarn.lock",
+              "gitBlob": "7b3737bf3af6c4ccad699c1a88c129192c9cf3d0"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "yarn",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts",
+            "--non-interactive"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "test:unit",
+              "command": "vitest run"
+            },
+            {
+              "name": "build",
+              "command": "tsc -b && vite build && vite build -c vite.demo.config.ts"
+            }
+          ],
+          "requiredReviewGates": [
+            "Review Vite configuration and dependency lifecycle scripts. UI browser dependencies require a separate explicit qualification."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        },
+        {
+          "repository": "Gastrofy/ingredient-resolver-widget",
+          "ref": "develop",
+          "pipeline": "nf-lean-widget-test",
+          "sourceSha": "4c77fade35a7b0006254b1edef929aa8fcffc3f1",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "457143ceac027a9f63ee5f357254800ea5fe4968",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "1d14f99ffd44f56545330e40e687ce905970cb1b",
+            "sha256": "f563659d8832c9d85224147ea6a36d03c563e5ee0b0eed1368a7d42118fb99fb"
+          },
+          "engines": {
+            "node": ">=22"
+          },
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "yarn.lock",
+              "gitBlob": "7b3737bf3af6c4ccad699c1a88c129192c9cf3d0"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "yarn",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts",
+            "--non-interactive"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "test:unit",
+              "command": "vitest run"
+            },
+            {
+              "name": "build",
+              "command": "tsc -b && vite build && vite build -c vite.demo.config.ts"
+            }
+          ],
+          "requiredReviewGates": [
+            "Review Vite configuration and dependency lifecycle scripts. UI browser dependencies require a separate explicit qualification."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    },
+    {
+      "project": "nf-product-locator-widget-prod",
+      "architecture": "amd64",
+      "profile": "node-24.19.0-amd64",
+      "bindings": [
+        {
+          "repository": "Northfork-AB/product-locator-widget",
+          "ref": "main",
+          "pipeline": "nf-product-locator-prod",
+          "sourceSha": "5f84bbff698fb1065ef966ed4d5c468359683e14",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "712e63cd7b0168cc661e2aba6601289a8ff2993e",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "95fa5511654e40f5285705e567fa2a5b488223ad",
+            "sha256": "c77535396e6d3a12022c78828a47a93b63cad7119310ea398dbe385325926ea1"
+          },
+          "engines": {
+            "node": "^24.19.0",
+            "pnpm": "11.x"
+          },
+          "packageManager": "pnpm@11.27.1",
+          "lockfiles": [
+            {
+              "path": "pnpm-lock.yaml",
+              "gitBlob": "b41e2b64725a15af50728c1e45aa6f7051bd4ba1"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "pnpm",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "typecheck",
+              "command": "tsc -b"
+            },
+            {
+              "name": "test",
+              "command": "vitest run"
+            },
+            {
+              "name": "build:widget",
+              "command": "tsc -b && vite build --mode widget"
+            },
+            {
+              "name": "build",
+              "command": "tsc -b && vite build"
+            }
+          ],
+          "requiredReviewGates": [
+            "Use exact Node24.19.0 and pnpm11.27.1. Source corepack@latest is an existing updater; confirm it preserves both required versions. Use synthetic VITE_* URLs/keys; never run publication or notification blocks."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    },
+    {
+      "project": "nf-product-locator-widget-test",
+      "architecture": "amd64",
+      "profile": "node-24.19.0-amd64",
+      "bindings": [
+        {
+          "repository": "Northfork-AB/product-locator-widget",
+          "ref": "develop",
+          "pipeline": "nf-product-locator-test",
+          "sourceSha": "d92510654bab88d11eb94988d8230c8969adbdad",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "712e63cd7b0168cc661e2aba6601289a8ff2993e",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "95fa5511654e40f5285705e567fa2a5b488223ad",
+            "sha256": "c77535396e6d3a12022c78828a47a93b63cad7119310ea398dbe385325926ea1"
+          },
+          "engines": {
+            "node": "^24.19.0",
+            "pnpm": "11.x"
+          },
+          "packageManager": "pnpm@11.27.1",
+          "lockfiles": [
+            {
+              "path": "pnpm-lock.yaml",
+              "gitBlob": "b41e2b64725a15af50728c1e45aa6f7051bd4ba1"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "pnpm",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "typecheck",
+              "command": "tsc -b"
+            },
+            {
+              "name": "test",
+              "command": "vitest run"
+            },
+            {
+              "name": "build:widget",
+              "command": "tsc -b && vite build --mode widget"
+            },
+            {
+              "name": "build",
+              "command": "tsc -b && vite build"
+            }
+          ],
+          "requiredReviewGates": [
+            "Use exact Node24.19.0 and pnpm11.27.1. Source corepack@latest is an existing updater; confirm it preserves both required versions. Use synthetic VITE_* URLs/keys; never run publication or notification blocks."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    },
+    {
+      "project": "open-ai-service-builder",
+      "architecture": "amd64",
+      "profile": "node-20.20.2-amd64",
+      "bindings": [
+        {
+          "repository": "Gastrofy/ai-service",
+          "ref": "master",
+          "pipeline": "open-ai-service-test",
+          "sourceSha": "70625a0516dc00fb95d9572ddba88f3d2efee2f5",
+          "buildspec": "buildspec.yml",
+          "buildspecBlob": "2dd8493994d24e5e6b6071c977925e5594bafee6",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "611b9399b7815500f11b227de4e4ceff7ab5f87a",
+            "sha256": "f4482512735568067231ffeabf9e36ec27286b0cd19c2190b88d1446674d72d6"
+          },
+          "engines": null,
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "package-lock.json",
+              "gitBlob": "f95485ad3bf47c182e0c0e54b8af0292cac03c94"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "npm",
+            "ci",
+            "--ignore-scripts",
+            "--no-audit",
+            "--no-fund"
+          ],
+          "candidateSourceScriptsAfterReview": [],
+          "requiredReviewGates": [
+            "The build script is sls package. Review Serverless plugins, variable resolution and lifecycle hooks before qualification; packaging is not assumed side-effect free."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    },
+    {
+      "project": "page-editor-deploy-build",
+      "architecture": "amd64",
+      "profile": "node-18.20.8-amd64",
+      "bindings": [
+        {
+          "repository": "Gastrofy/page-editor",
+          "ref": "master",
+          "pipeline": "page-editor-api-prod",
+          "sourceSha": "44ab2b6b0212f740b0465ec302fd77d63c5fb12e",
+          "buildspec": "aws-deploy.yml",
+          "buildspecBlob": "b660d04dc87ef9b30db2cc3e028bc21e535ba9ff",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "c59276f987026c30b64a75f69993d88f41f026aa",
+            "sha256": "9742276e3684702442082a0b350a41202b09070067d7a667c315ad8fe227fc35"
+          },
+          "engines": {
+            "node": ">=18.0.0",
+            "npm": ">=9.0.0"
+          },
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "yarn.lock",
+              "gitBlob": "e83bd2c9713d9b47882f5616593074fde24f90c5"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "yarn",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts",
+            "--non-interactive"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "test",
+              "command": "vitest run"
+            }
+          ],
+          "requiredReviewGates": [
+            "SST build can resolve AWS infrastructure, credentials, and plugins. Review SST configuration and tests before selecting source commands. Do not execute SST build or deployment in generic qualification."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        },
+        {
+          "repository": "Gastrofy/page-editor",
+          "ref": "develop",
+          "pipeline": "page-editor-api-test",
+          "sourceSha": "d3b978a90615a4393e280bfd8e4e8a925a4fb465",
+          "buildspec": "aws-deploy.yml",
+          "buildspecBlob": "b660d04dc87ef9b30db2cc3e028bc21e535ba9ff",
+          "manifest": {
+            "path": "package.json",
+            "gitBlob": "c59276f987026c30b64a75f69993d88f41f026aa",
+            "sha256": "9742276e3684702442082a0b350a41202b09070067d7a667c315ad8fe227fc35"
+          },
+          "engines": {
+            "node": ">=18.0.0",
+            "npm": ">=9.0.0"
+          },
+          "packageManager": null,
+          "lockfiles": [
+            {
+              "path": "yarn.lock",
+              "gitBlob": "e83bd2c9713d9b47882f5616593074fde24f90c5"
+            }
+          ],
+          "dependencyInstallAfterReview": [
+            "yarn",
+            "install",
+            "--frozen-lockfile",
+            "--ignore-scripts",
+            "--non-interactive"
+          ],
+          "candidateSourceScriptsAfterReview": [
+            {
+              "name": "test",
+              "command": "vitest run"
+            }
+          ],
+          "requiredReviewGates": [
+            "SST build can resolve AWS infrastructure, credentials, and plugins. Review SST configuration and tests before selecting source commands. Do not execute SST build or deployment in generic qualification."
+          ],
+          "status": "exact_source_contract_ready_not_executed",
+          "buildspecMatchesSelectorAudit": true
+        }
+      ],
+      "qualificationStatus": "requires_root_review_and_native_profile_proof",
+      "noPush": true,
+      "noDeployment": true,
+      "noExternalArtifacts": true
+    }
+  ],
+  "excludedProjects": {
+    "docker_selector_retirement_candidates": [
+      "order-service",
+      "recipe-recommender-service",
+      "test",
+      "testy-service"
+    ],
+    "java_retirement_candidate": [
+      "resolver-java"
+    ]
+  },
+  "safeExecutionPolicy": [
+    "Use native immutable profile and exact source SHA.",
+    "Use NO_ARTIFACTS and NO_CACHE standalone build.",
+    "Do not execute the original install/pre_build/post_build blocks.",
+    "Run profile proof before source commands.",
+    "Review lifecycle/config/plugin/test chains before approving source commands.",
+    "Do not supply production environment files, credentials, AWS metadata, or notification endpoints to source commands.",
+    "Use a disposable network-none container of the same profile for approved tests/builds after dependency materialization.",
+    "Do not publish images, S3 objects, packages, deployment artifacts, data jobs, or messages.",
+    "Require explicit reviewed lifecycle commands if ignore-scripts prevents a native dependency from working. Do not silently enable all scripts."
+  ],
+  "nativeProofStatus": "pending_CI_owner_builds_and_root_review"
+}

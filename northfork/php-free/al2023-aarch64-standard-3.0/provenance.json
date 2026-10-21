@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "architecture": "arm64",
+  "purpose": "PHP-free native ARM Docker orchestration builder",
+  "base_image": "public.ecr.aws/codebuild/amazonlinux-aarch64-standard@sha256:a192362acb7b2f068890a6ab1d0231d06cba64ed2cbe09a822ce769d146c484d",
+  "upstream_recipe_reference_commit": "2cc2e02f70748027447d55b5e82229dd7d69bd70",
+  "upstream_reference_is_binary_provenance": false,
+  "frozen_package_sha256": "9be45d13abb4b55c5d77b8f738e3909d2dea23114bd59e1d9c732fb9472bea01",
+  "frozen_files_sha256": {
+    "Dockerfile": "43edd4b28f1734c1c6979bcf9cd9c394fde930eb74cfc08765b85f81e89c79e5",
+    "remove-php.sh": "4604e1588a91be40cc937ccacfb260b7bfd640fc0d2a307923ed948a0b81d0cc",
+    "verify-candidate.py": "511e7d6090f838010358d13302ea77566821979ede2f538d61011e98ef9dc7b2",
+    "toolchain-probe.sh": "5d455efaa3013d0e932b1037e0b09cdc338ce1f8ccb22e3b3cad92a0f65cb093",
+    "dind-proof.sh": "07ae3e1f18982e83de250690d426df5cd76e265b1dd9dd94442bec7a4c129e4c",
+    "base-config.json": "85f2f6ae494be82865813758479dd9cf1debe52b726b54a7884d01612cb61790"
+  },
+  "native_proof_build": "php-security-base-20261021:5ecc7955-6a55-4317-87aa-eb51a0690ede",
+  "validation_status": "Native full-layer and actual CodeBuild startup passed; per-project source/role gates remain",
+  "validated_image": "950664063715.dkr.ecr.eu-central-1.amazonaws.com/northfork/php-security-base@sha256:50cf9b7005ad623cd2c5dc29a62e1833f1ed119d79b18004927fab5fbb3854f2",
+  "validated_configuration_digest": "sha256:b88ca8c0f653c4b750855ed9509d3545a8568162391604aa93664653ad6073bf",
+  "compressed_image_bytes": 4866858324,
+  "actual_codebuild_launch": "php-security-base-20261021:df25cfdd-33f0-4ae3-9ea3-b47db3c4f5f4",
+  "actual_provisioning_seconds": 152
+}
