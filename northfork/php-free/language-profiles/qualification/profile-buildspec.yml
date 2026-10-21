@@ -1,0 +1,12 @@
+version: 0.2
+env:
+  shell: bash
+phases:
+  build:
+    commands:
+      - set -euo pipefail
+      - cd northfork/php-free/language-profiles
+      - test -n "$NORTHFORK_LANGUAGE_PROFILE"
+      - python3 verify-profile.py "$NORTHFORK_LANGUAGE_PROFILE"
+# Use a standalone build with an immutable native profile image override.
+# Set NO_ARTIFACTS and NO_CACHE. Do not execute an application's buildspec here.

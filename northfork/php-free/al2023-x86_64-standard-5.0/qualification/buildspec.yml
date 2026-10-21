@@ -1,0 +1,14 @@
+version: 0.2
+env:
+  shell: bash
+phases:
+  build:
+    commands:
+      - set -euo pipefail
+      - test "$(uname -m)" = x86_64
+      - cd northfork/php-free/al2023-x86_64-standard-5.0
+      - bash qualification/ensure-docker.sh
+      - bash qualification/ensure-docker.sh
+      - python3 qualification/toolchain-json.py
+      - python3 qualification/standalone-runtime-probe.py
+      - bash qualification/dind-proof.sh

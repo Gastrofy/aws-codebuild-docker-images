@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "purpose": "PHP-free Docker orchestration builder; no host application PHP",
+  "base_image": "public.ecr.aws/codebuild/amazonlinux-x86_64-standard@sha256:2d940fd870727f4f0fe5398d3de70bf445fdb38cee7538c0d61650d1386d2616",
+  "upstream_recipe_reference_commit": "2cc2e02f70748027447d55b5e82229dd7d69bd70",
+  "upstream_reference_is_binary_provenance": false,
+  "frozen_package_sha256": "566b98717789839dab02908162ac1a1e6e724e5fbfaba8baf1ff19b9a9ce6078",
+  "frozen_files_sha256": {
+    "Dockerfile": "e6eda57be5056a0f91d18b2c4e85d1d661d2c901bb48f44dec205c959cd989c3",
+    "remove-php.sh": "4604e1588a91be40cc937ccacfb260b7bfd640fc0d2a307923ed948a0b81d0cc",
+    "verify-candidate.py": "1c866858823e62f5aabfc7769e9ffdb9b8febd26f8917b2fb7e2ff9f20e316d9",
+    "toolchain-probe.sh": "5d455efaa3013d0e932b1037e0b09cdc338ce1f8ccb22e3b3cad92a0f65cb093",
+    "dind-proof.sh": "70f0bb067da46f274153eb52660a8013c628b08992cb1d6e97502f8fe16f284f",
+    "base-config.json": "b87dcb6cef6b5846d78f45b3c9b887c9f937888e3de1b64b8cfc10032b1af139"
+  },
+  "native_proof_build": "php-security-base-20261021:800462fd-0e43-42e2-94c1-73add34964fe",
+  "qualification_scope": "Docker-only exact-role/source proof. Actual runner confirms Node18/Python3.11 defaults selected by official source; installed higher-version ENV constants are caches. Other tool versions need qualification.",
+  "validation_status": "Native full-layer and actual CodeBuild startup passed; per-project source/role gates remain",
+  "validated_image": "950664063715.dkr.ecr.eu-central-1.amazonaws.com/northfork/php-security-base@sha256:a4ceb9350d181c50f6cbd048ed412e077c545b914be18626dd3c62c39a0a9108",
+  "validated_configuration_digest": "sha256:919557dc204558ccd6dfb7ff46ab00bb5858a3064d17ca24f0876894ba50acd3",
+  "compressed_image_bytes": 5926222317,
+  "actual_codebuild_launch": "php-security-base-20261021:90307d03-5af0-4534-a65a-0d02ccf9c5b4",
+  "actual_provisioning_seconds": 182
+}
