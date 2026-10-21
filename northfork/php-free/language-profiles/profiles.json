@@ -5,8 +5,6 @@
       "version": "12.22.12",
       "architecture": "amd64",
       "projects": [
-        "gastrofy-api-codedeploy",
-        "gastrofy-api-test-codebuild",
         "nf-content-cart-shop-landing-page"
       ],
       "package_tools": [],
@@ -75,6 +73,20 @@
       ],
       "package_tools": [],
       "native_qualification": "required_before_project_update"
+    },
+    "node-16.20.2-amd64": {
+      "language": "node",
+      "version": "16.20.2",
+      "architecture": "amd64",
+      "projects": [
+        "Northfork-NG-build"
+      ],
+      "package_tools": [
+        "yarn"
+      ],
+      "native_qualification": "required_before_project_update",
+      "archive_sha256": "874463523f26ed528634580247f403d200ba17a31adf2de98a7b124c6eb33d87",
+      "checksum_source": "https://nodejs.org/dist/v16.20.2/SHASUMS256.txt"
     }
   },
   "package_tools": {
@@ -123,6 +135,10 @@
     ],
     "java_retirement_candidate": [
       "resolver-java"
+    ],
+    "retired_gastrofy_api_projects": [
+      "gastrofy-api-test-codebuild",
+      "gastrofy-api-codedeploy"
     ]
   },
   "base_policy": "Each profile requires an approved immutable native PHP-free base; do not render with a managed or mutable image reference."

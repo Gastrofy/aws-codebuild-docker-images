@@ -422,69 +422,6 @@
       "noExternalArtifacts": true
     },
     {
-      "project": "gastrofy-api-codedeploy",
-      "architecture": "amd64",
-      "profile": "node-12.22.12-amd64",
-      "bindings": [
-        {
-          "status": "inline_source_not_bound",
-          "selector": {
-            "nodejs": "12.x"
-          },
-          "blocker": "Resolve the actual source artifact or caller before source qualification. Do not infer a source repository."
-        }
-      ],
-      "qualificationStatus": "requires_root_review_and_native_profile_proof",
-      "noPush": true,
-      "noDeployment": true,
-      "noExternalArtifacts": true
-    },
-    {
-      "project": "gastrofy-api-test-codebuild",
-      "architecture": "amd64",
-      "profile": "node-12.22.12-amd64",
-      "bindings": [
-        {
-          "repository": "Gastrofy/gastrofy_api",
-          "ref": "release-test",
-          "pipeline": "gastrofy-api-test",
-          "sourceSha": "1b34a930c2c7a109cae516fd06d4927d21f60a01",
-          "buildspec": "buildspec.yml",
-          "buildspecBlob": "5d0afe7d2e09931a29b2d100fc19c786b38b5399",
-          "manifest": {
-            "path": "package.json",
-            "gitBlob": "ff6e5cb6a999064ee4e7f30b24d19d245f9eae54",
-            "sha256": "3418d7642bd5a4c84f051b4be99a5bd6cb5d911cd286e18d7ea930f0375c72dd"
-          },
-          "engines": null,
-          "packageManager": null,
-          "lockfiles": [
-            {
-              "path": "package-lock.json",
-              "gitBlob": "29ba1c71408e185eeed306b25ff4d8f5fb832c17"
-            }
-          ],
-          "dependencyInstallAfterReview": [
-            "npm",
-            "ci",
-            "--ignore-scripts",
-            "--no-audit",
-            "--no-fund"
-          ],
-          "candidateSourceScriptsAfterReview": [],
-          "requiredReviewGates": [
-            "The test script is serverless-bundle test. Review plugin configuration and tests before execution. No generic build script is declared."
-          ],
-          "status": "exact_source_contract_ready_not_executed",
-          "buildspecMatchesSelectorAudit": true
-        }
-      ],
-      "qualificationStatus": "requires_root_review_and_native_profile_proof",
-      "noPush": true,
-      "noDeployment": true,
-      "noExternalArtifacts": true
-    },
-    {
       "project": "nf-content-cart-shop-landing-page",
       "architecture": "amd64",
       "profile": "node-12.22.12-amd64",
@@ -930,5 +867,10 @@
     "Do not publish images, S3 objects, packages, deployment artifacts, data jobs, or messages.",
     "Require explicit reviewed lifecycle commands if ignore-scripts prevents a native dependency from working. Do not silently enable all scripts."
   ],
-  "nativeProofStatus": "pending_CI_owner_builds_and_root_review"
+  "nativeProofStatus": "pending_CI_owner_builds_and_root_review",
+  "retiredProjects": [
+    "gastrofy-api-test-codebuild",
+    "gastrofy-api-codedeploy"
+  ],
+  "retirementEvidence": "outputs/php-upgrade/gastrofy-api-project-retirement-execution.json"
 }

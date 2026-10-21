@@ -15,6 +15,8 @@ profile = json.loads((root / 'profiles.json').read_text())['profiles'][args.prof
 lines = ['FROM ' + args.base, 'COPY . /opt/northfork/language-profile', 'ENV NORTHFORK_LANGUAGE_PROFILE=' + args.profile]
 if profile['language'] == 'node':
     lines += ['RUN bash /opt/northfork/language-profile/install-node.sh ' + ' '.join([profile['version'], profile['architecture'], profile.get('archive_sha256', 'cached')]), 'RUN python3 /opt/northfork/language-profile/install-package-tools.py ' + args.profile]
+    if profile['version'].split('.')[0] in ('12', '16'):
+        lines += ['RUN python3 /opt/northfork/language-profile/install-runtime-selector.py ' + profile['version']]
     if 'corepack' in profile.get('package_tools', []):
         lines += ['ENV COREPACK_ENABLE_NETWORK=0']
 else:

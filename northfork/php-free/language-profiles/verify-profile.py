@@ -24,6 +24,11 @@ version = profile['version']
 assert output(['node', '--version']) == 'v' + version
 cache = Path('/usr/local/n/versions/node') / version
 assert hashlib.sha256(Path('/usr/local/bin/node').read_bytes()).digest() == hashlib.sha256((cache / 'bin/node').read_bytes()).digest()
+if version.split('.')[0] in ('12', '16'):
+    import yaml
+    catalog = yaml.safe_load(Path('/codebuild/image/config/runtimes.yml').read_text())
+    assert 'php' not in catalog['runtimes']
+    assert catalog['runtimes']['nodejs']['versions'][int(version.split('.')[0])]['commands'] == ['n --offline --no-preserve ' + version, 'test \"$(node --version)\" = \"v' + version + '\"']
 npm_version = output(['npm', '--version'])
 assert npm_version == json.loads((cache / 'lib/node_modules/npm/package.json').read_text())['version']
 tools = {'node': version, 'npm': npm_version}

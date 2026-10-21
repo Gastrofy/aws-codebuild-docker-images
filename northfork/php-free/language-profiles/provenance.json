@@ -12,6 +12,10 @@
     "node24-19": {
       "url": "https://nodejs.org/dist/v24.19.0/SHASUMS256.txt",
       "manifestSha256": "be0629ee2bcd8e40bb856abdd3407f0762101b76bd60a36b8867f637733631c0"
+    },
+    "node16": {
+      "url": "https://nodejs.org/dist/v16.20.2/SHASUMS256.txt",
+      "manifestSha256": "c99843072b4df7216637a564e6c87da53cb2cf55cee6bf95cdda301143f6b7ca"
     }
   },
   "packageMetadata": {

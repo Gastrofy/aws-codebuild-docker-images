@@ -1,16 +1,20 @@
 # Explicit Node profiles
 
-These recipes preserve the runtime selectors required by twelve retained CodeBuild projects.
+These recipes preserve the runtime selectors required by eleven retained CodeBuild projects.
 The CI owner builds and publishes the profiles after root review.
 These files do not change applications or CodeBuild projects.
 
-Custom CodeBuild images skip `runtime-versions` and override image entrypoints.
-Each profile therefore selects its exact Node version during image construction.
+The native CodeBuild runner applies `runtime-versions` to these custom images.
+A Node 20 selector selected the exact cached Node 20.20.2 release in a standalone build.
+Each profile also selects its exact Node version during image construction.
+Source qualification must verify the version after the source runtime selector runs.
+Custom CodeBuild images override image entrypoints.
 The recipes preserve the base entrypoint and working directory.
 
 | Native architecture | Node | Required package tools |
 |---|---|---|
 | amd64 | 12.22.12 | Bundled npm |
+| amd64 | 16.20.2 | Bundled npm, Yarn Classic 1.22.22 |
 | amd64 | 18.20.8 | Bundled npm, Yarn Classic 1.22.22 |
 | amd64 | 20.20.2 | Bundled npm |
 | amd64 | 22.23.3 | Bundled npm, Yarn Classic 1.22.22 |
@@ -19,7 +23,9 @@ The recipes preserve the base entrypoint and working directory.
 
 The Node 18, 20, and 22 recipes select the base cache with `n --offline --no-preserve`.
 A missing cache fails the build.
-Node 12.22.12 and amd64 Node 24.19.0 use official archives with fixed SHA256 checksums.
+Node 12.22.12, Node 16.20.2, and amd64 Node 24.19.0 use official archives with fixed SHA256 checksums.
+The official runtime catalog does not include Node 12 or Node 16 major aliases.
+Those profiles add only the missing alias with an exact offline cache command.
 Package tools use fixed registry versions and integrity hashes.
 No package lifecycle script runs during tool installation.
 
@@ -63,7 +69,9 @@ Use synthetic local configuration.
 
 Serverless and SST packaging can resolve real infrastructure and invoke plugins.
 Those commands require a reviewed contract before execution.
-The inline `gastrofy-api-codedeploy` source remains unbound and cannot receive source qualification yet.
+The two obsolete Gastrofy API projects are retired after caller and deployment-target verification.
+Their pipeline retains disabled build and deploy transitions.
+They require no source qualification.
 
 ## Exclusions and gates
 
