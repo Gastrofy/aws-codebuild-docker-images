@@ -20,7 +20,8 @@ The AMD64 image contains 5.93 GB of compressed layers; ARM64 contains 4.87 GB.
 Cold provisioning took 182 seconds and 152 seconds in the recorded standalone builds.
 These measurements do not guarantee another project's provisioning time.
 
-Custom CodeBuild images ignore image entrypoints and managed runtime selectors.
+Custom CodeBuild images override image entrypoints.
+Native runner tests for these images confirm that `runtime-versions` selects versions from their runtime catalogs.
 Every Docker source buildspec must initialize the daemon before its first Docker command.
 The validated [startup helper](al2023-x86_64-standard-5.0/qualification/ensure-docker.sh) keeps a healthy daemon or starts the bundled official daemon with a 75-second limit.
 It does not start an application entrypoint.
