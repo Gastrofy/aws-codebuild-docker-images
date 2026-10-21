@@ -47,7 +47,7 @@ class SourceContractTest(unittest.TestCase):
                    ('.npmrc', 'registry=https://user:synthetic-secret@example.invalid/'),
                    ('.npmrc', '#_authToken=synthetic-secret')]
         configs += [('.npmrc', 'registry=https://registry.example.invalid/?' + key + '=synthetic-secret')
-                    for key in ['token', 'access_token', 'auth', 'api_key', 'password', 'signature']]
+                    for key in ['token', 'access_token', 'auth', 'auth_token', 'api_key', 'apikey', 'password', 'signature']]
         for name, text in configs:
             with self.subTest(name=name, style=configs.index((name, text))):
                 with tempfile.TemporaryDirectory() as folder:

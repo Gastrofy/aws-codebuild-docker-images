@@ -29,7 +29,7 @@ def check_package_config(path):
     try:
         for url in re.findall(r'https?://[^\s\"\'<>]+', text):
             parsed = urlsplit(url)
-            if parsed.username is not None or any(key.lower() in {'token', 'access_token', 'auth', 'api_key', 'password', 'signature'}
+            if parsed.username is not None or any(key.lower() in {'token', 'access_token', 'auth', 'auth_token', 'api_key', 'apikey', 'password', 'signature'}
                                                   for key, _ in parse_qsl(parsed.query, keep_blank_values=True)):
                 credential_url = True
     except ValueError:
